@@ -354,7 +354,7 @@ def showIssueBuffer(number, url = ""):
   labels = getLabels()
   if labels is not None:
     for label in labels:
-      if str(label["name"]) == number:
+      if str(label["name"].encode(vim.eval("&encoding"))) == number:
         showIssueList(number, "True")
         return
 
